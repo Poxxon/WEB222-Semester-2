@@ -1,0 +1,11 @@
+
+> web222-assignment-1@5.0.0 eslint
+> eslint src/**/*.js
+
+
+/Users/pouyarad/Documents/SEM 2 CPA/WEB222 NFF/w01/a1/src/solutions.js
+  565:26  error  'Set' is not defined  no-undef
+  566:27  error  'Set' is not defined  no-undef
+
+✖ 2 problems (2 errors, 0 warnings)
+

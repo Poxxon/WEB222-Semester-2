@@ -1,0 +1,70 @@
+
+> web222-assignment-1@5.0.0 test
+> jest --
+
+FAIL src/problem-05.test.js
+  ● Problem 5 - normalizeCoord() function › alternate [lat, lng] format › coord with alternate layout format can be parsed correctly
+
+    Invalid coordinates
+
+      369 |
+      370 |   if (isNaN(lat) || isNaN(long) || lat < -90 || lat > 90 || long < -180 || long > 180) {
+    > 371 |     throw new Error('Invalid coordinates');
+          |           ^
+      372 |   }
+      373 |
+      374 |   return `(${lat}, ${long})`;
+
+      at normalizeCoord (src/solutions.js:371:11)
+      at Object.normalizeCoord (src/problem-05.test.js:61:14)
+
+FAIL src/problem-06.test.js
+  ● Problem 6 - formatCoords() › multiple valid lat, lng coord formats should be formatted correctly in a list
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "((43.7955, -79.3496), (43.7955, -79.3496))"
+    Received: "((43.7955, -79.3496))"
+
+      14 |   test('multiple valid lat, lng coord formats should be formatted correctly in a list', function () {
+      15 |     let result = formatCoords('43.7955, -79.3496', '[-79.3496,43.7955]');
+    > 16 |     expect(result).toBe('((43.7955, -79.3496), (43.7955, -79.3496))');
+         |                    ^
+      17 |   });
+      18 |
+      19 |   test('invalid coords are skipped', function () {
+
+      at Object.toBe (src/problem-06.test.js:16:20)
+
+  ● Problem 6 - formatCoords() › invalid coords are skipped
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "((43.7955, -79.3496), (43.7955, -79.3496))"
+    Received: "((43.7955, -79.3496))"
+
+      19 |   test('invalid coords are skipped', function () {
+      20 |     let result = formatCoords('43.7955, -79.3496', '9000, 9000', '[-79.3496,43.7955]');
+    > 21 |     expect(result).toBe('((43.7955, -79.3496), (43.7955, -79.3496))');
+         |                    ^
+      22 |   });
+      23 |
+      24 |   test('if all values are invalid, an empty list is returned', function () {
+
+      at Object.toBe (src/problem-06.test.js:21:20)
+
+PASS src/problem-07.test.js
+PASS src/problem-09.test.js
+PASS src/problem-10.test.js
+PASS src/problem-03.test.js
+PASS src/problem-04.test.js
+PASS src/problem-01.test.js
+PASS src/problem-08.test.js
+PASS src/problem-02.test.js
+PASS src/problem-00.test.js
+
+Test Suites: 2 failed, 9 passed, 11 total
+Tests:       3 failed, 105 passed, 108 total
+Snapshots:   0 total
+Time:        0.305 s, estimated 1 s
+Ran all test suites.
