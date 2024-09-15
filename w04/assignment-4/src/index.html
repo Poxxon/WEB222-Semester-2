@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Change this to your name-->
+    <meta name="author" content="Pouya Rad" />
+
+    <title>Auto Center - North America Performance</title>
+    <!-- Classless CSS Stylesheet - https://oxal.org/projects/sakura/ -->
+    <link rel="stylesheet" href="./css/sakura.css" type="text/css" />
+  </head>
+  <body>
+    <header id="Top">
+      <!-- Change this to your Store's info -->
+      <h1>North America Performance</h1>
+      <p>Unleashing Power and Precision</p>
+      <nav id="menu">
+        <!-- Dynamically create your menu category buttons here -->
+        <!-- Done in app.js-->
+      </nav>
+    </header>
+    <hr />
+    <main>
+      <h2 id="selected-category">
+        <!-- Dynamically update the selected category title -->
+        <!-- Done in app.js-->
+        <hr />
+      </h2>
+
+      <table>
+        <thead>
+          <!-- Statically create the headings for your table here -->
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+
+        <tbody id="category-products">
+          <!-- Dynamically create your product rows here -->
+          <!-- Done in app.js-->
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      <button class="scroll-to-top" onclick="window.location.href='#Top';">&#8679;</button>
+    </footer>
+
+    <!-- JavaScript Data Files -->
+    <script src="./js/categories.js"></script>
+    <script src="./js/products.js"></script>
+
+    <!-- Main App JavaScript File -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>

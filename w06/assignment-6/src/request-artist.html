@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request a New Artist</title>
+    <link rel="stylesheet" href="./css/sakura.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Request a New Artist</h1>
+      <nav>
+        <p>To go back to the homepage tap <a href="index.html">here.</a></p>
+      </nav>
+    </header>
+    <main>
+      <form action="https://httpbin.org/post" method="POST" id="artistRequestForm">
+        <div class="form-group">
+          <label for="artistName">Artist Name:</label>
+          <input type="text" id="artistName" name="artistName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="genre">Music Genre:</label>
+          <input list="genres" id="genre" name="genre" required />
+          <datalist id="genres">
+            <option value="Pop"></option>
+            <option value="Rock"></option>
+            <option value="Hip-Hop"></option>
+            <option value="Jazz"></option>
+            <option value="Classical"></option>
+            <option value="Country"></option>
+            <option value="Electronic"></option>
+            <option value="Reggae"></option>
+            <option value="Blues"></option>
+            <option value="Folk"></option>
+          </datalist>
+        </div>
+
+        <div class="form-group">
+          <label for="socialMediaUrls">Social Media URLs:</label>
+          <input type="url" id="socialMediaUrls" name="socialMediaUrls" required />
+        </div>
+
+        <div class="form-group">
+          <label for="songUrls">Example Songs/Videos:</label>
+          <div id="songUrlsContainer">
+            <input type="url" name="songUrls[]" required />
+          </div>
+          <button type="button" onclick="addSongUrl()">Add another URL</button>
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" id="explicitLyrics" name="explicitLyrics" />
+          <label for="explicitLyrics">Music includes explicit lyrics</label>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Why should this artist be added?</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+
+        <input type="submit" value="Submit Request" />
+      </form>
+    </main>
+  </body>
+  <script>
+    function addSongUrl() {
+      const container = document.getElementById("songUrlsContainer");
+      const input = document.createElement("input");
+      input.type = "url";
+      input.name = "songUrls[]";
+      input.required = true;
+      container.appendChild(input);
+    }
+  </script>
+</html>
